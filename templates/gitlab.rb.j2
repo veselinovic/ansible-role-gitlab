@@ -28,6 +28,9 @@ letsencrypt['auto_renew_day_of_month'] = "{{ gitlab_letsencrypt_auto_renew_day_o
 letsencrypt['auto_renew'] = "{{ gitlab_letsencrypt_auto_renew }}"
 {% endif %}
 
+# Should we spinn up own grafana instance?
+grafana['enable'] = "{{ gitlab_enable_grafana }}"
+
 # The directory where Git repositories will be stored.
 git_data_dirs({"default" => {"path" => "{{ gitlab_git_data_dir }}"} })
 
