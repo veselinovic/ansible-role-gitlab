@@ -30,6 +30,8 @@ letsencrypt['auto_renew'] = "{{ gitlab_letsencrypt_auto_renew }}"
 
 # Should we spinn up own grafana instance?
 grafana['enable'] = {{ gitlab_enable_grafana | default(false) }}
+prometheus_monitoring['enable'] = {{ gitlab_enable_prometheus | default(false) }}
+
 
 # The directory where Git repositories will be stored.
 git_data_dirs({"default" => {"path" => "{{ gitlab_git_data_dir }}"} })
